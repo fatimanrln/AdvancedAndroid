@@ -1,0 +1,19 @@
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  script:
+    - ./gradlew test
+  artifacts:
+    paths:
+      - build/test-results/
+
+build:
+  stage: build
+  script:
+    - ./gradlew build
+  artifacts:
+    paths:
+      - build/
